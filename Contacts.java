@@ -26,6 +26,7 @@ public class Contacts {
 	public static void setFirst_name(String first_name) {
 		Contacts.first_name = first_name;
 	}
+	
 	public String toString()
     {
         return " Address book contanct details are as follows : \nFirst Name is :"+first_name+"\nLast Name is "+last_name+"\nAddress is :"+Address+"\nCity is "+city
