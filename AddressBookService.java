@@ -140,7 +140,15 @@ public class AddressBookService {
         	long countstate=dictforstate.entrySet().stream().map(a->a.getValue().equals(state)).count();
         	System.out.println("count state by person"+countstate);
         }
-        
+        public static void sortAlphabatical() {
+        	System.out.println("Enter the name of adddress book");
+        	String name=sc.next();
+        	if(hashAddressBook.get(name).isEmpty()) {
+        		System.out.println("Book is empty");
+        		return;
+        	}
+        	hashAddressBook.get(name).stream().sorted((c1,c2)->Contacts.getFirst_name().compareToIgnoreCase(Contacts.getFirst_name())).forEach(c->System.out.println(c));
+        }
 	    
 	    public static void display() {
 	    	System.out.println("Enter the name of the address book you want see");
@@ -157,6 +165,8 @@ public class AddressBookService {
 		public static void editContact() {	
 		}
 		public static void deleteContact() {
+		}
+		public static void sortAlphabatically() {
 		}
 	
 }
