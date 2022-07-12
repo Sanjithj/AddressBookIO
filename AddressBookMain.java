@@ -8,7 +8,7 @@ public static void main(String[] args) {
 	Scanner sc =new Scanner(System.in);
 	int option;
 	while(true) {
-		System.out.println("Operation want to perform\n 1.Add Contact\n 2.edit contact\n 3.delete\n 4.Display contact\n 5. add address book\n 6. view city\n 7. view state\n 8. sort alphabetical");
+		System.out.println("Operation want to perform\n 1.Add Contact\n 2.edit contact\n 3.delete\n 4.Display contact\n 5. add address book\n 6. view city\n 7. view state\n 8. sort alphabetical\n 9.sort city");
 		option =sc.nextInt();
 		switch(option) {
 		case 1:
@@ -35,6 +35,8 @@ public static void main(String[] args) {
 	        	AddressBookService.viewState(State);
 	    case 8:
         	AddressBookService.sortAlphabatically();
+	    case 9:
+        	AddressBookService.sortByCity();
 	        	default:
 			System.out.println("Enter the option");
 		}

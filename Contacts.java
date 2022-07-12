@@ -33,6 +33,12 @@ public class Contacts {
 	public static void setCity(String city) {
 		Contacts.city = city;
 	}
+	public static int getZip() {
+		return zip;
+	}
+	public static void setZip(int zip) {
+		Contacts.zip = zip;
+	}
 	public static String getState() {
 		return state;
 	}

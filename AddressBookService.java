@@ -148,8 +148,15 @@ public class AddressBookService {
         		return;
         	}
         	hashAddressBook.get(name).stream().sorted((c1,c2)->Contacts.getFirst_name().compareToIgnoreCase(Contacts.getFirst_name())).forEach(c->System.out.println(c));
-        }
-	    
+        } public static void sortByCity()
+        {
+            System.out.println("Sorted by city names:");
+            hashAddressBook.values().forEach((n)->{
+                n.stream().sorted((c1,c2) -> {
+                  return Contacts.getCity().compareToIgnoreCase(Contacts.getCity());
+                }).forEach(n1-> System.out.println(n1));
+            });
+        } 
 	    public static void display() {
 	    	System.out.println("Enter the name of the address book you want see");
 	    	String name=sc.next();
