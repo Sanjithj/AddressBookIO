@@ -9,6 +9,7 @@ public class Contacts {
 	public static int zip;
 	public static long phone_number;
 	public static String email;
+	
 	public Contacts(String first_name, String last_name,String Address,String city,String state,int zip, long phone_number, String email) {
 		Contacts.first_name=first_name;
 		Contacts.last_name=last_name;

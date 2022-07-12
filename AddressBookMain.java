@@ -8,7 +8,7 @@ public static void main(String[] args) {
 	Scanner sc =new Scanner(System.in);
 	int option;
 	while(true) {
-		System.out.println("Operation want to perform\n 1)Add Contact\n 2)edit contact\n 3)delete\n4)Display contact");
+		System.out.println("Operation want to perform\n 1.Add Contact\n 2.edit contact\n 3.delete\n 4.Display contact\n 5. add address book");
 		option =sc.nextInt();
 		switch(option) {
 		case 1:
@@ -23,6 +23,8 @@ public static void main(String[] args) {
 		case 4:
 			AddressBookService.display();
 			break;
+		case 5:
+			AddressBookService.addAddressBook();
 		default:
 			System.out.println("Enter the correct option");
 		}

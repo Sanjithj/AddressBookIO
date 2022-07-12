@@ -1,11 +1,12 @@
 package com.bridgelabz;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class AddressBookService {
 	static Scanner sc=new Scanner(System.in);
-	static ArrayList<Contacts> arrayOfContacts = new ArrayList<Contacts>();
+	 static List<Contacts> arrayOfContacts = new ArrayList<Contacts>();
 	public static Contacts addContact() {
 		System.out.println("Please enter your first name :");
 	    String first_name = sc.next();
@@ -25,20 +26,20 @@ public class AddressBookService {
 	    System.out.println("Please enter your email id :");
 	    String email = sc.next();
 	    Contacts contact=new Contacts(first_name,last_name,Address,city,state,zip,phone_number,email);
-	    return contact;
-	    
+	    arrayOfContacts.add(contact);
+		return contact;
 	}
 	public static void addContacts() {
 		System.out.println("how many contact you want to add");
 		int n=sc.nextInt();
 		for(int i=0;i<n;i++) {
 			arrayOfContacts.add(addContact());
-			System.out.println();
+			System.out.println(i++);
 		}
 	}
 	public static int edit(String name) {
 		for(Contacts contact : arrayOfContacts) {
-			if(name.compareToIgnoreCase(Contacts.getFirst_name())==0);{
+			if(name.compareToIgnoreCase(Contacts.getFirst_name())==0){
 				return arrayOfContacts.indexOf(contact);
 			}
 		}
@@ -46,7 +47,7 @@ public class AddressBookService {
 	}
 	
 	public static void editContact() {
-		System.out.println("please enter the name which you want to edit");
+		System.out.println("Enter the name which you want to edit");
 		String name=sc.next();
 		int choice=edit(name);
 		
@@ -79,13 +80,17 @@ public class AddressBookService {
 			arrayOfContacts.remove(choice);
 			System.out.println("contact deleted successfully!!");
 		}
+		
 	}
 	  public static void display()
 	    {
 
-	        for(Contacts con : arrayOfContacts)
+	        for(Contacts contact : arrayOfContacts)
 	        {
-	            System.out.println(con);
+	            System.out.println(contact);
 	        }
 	    }
+	public static void addAddressBook() {
+		
+	}
 }
