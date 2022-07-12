@@ -25,6 +25,14 @@ public static void main(String[] args) {
 			break;
 		case 5:
 			AddressBookService.addAddressBook();
+		case 6:
+		    System.out.print(" please enter the name of person ");
+            String name = sc.next();
+            System.out.print(" enter to search by city: ");
+            String City = sc.next();
+            System.out.println("please enter state");
+            String state=sc.next();
+            AddressBookService.find(name, state, City);
 		default:
 			System.out.println("Enter the correct option");
 		}
