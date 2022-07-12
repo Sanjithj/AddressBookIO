@@ -2,10 +2,8 @@ package com.bridgelabz;
 
 import java.util.*;
 import java.util.Map.Entry;
-import java.util.stream.Stream;
 
 public class AddressBookService {
-	public static final String addressBookMang = null;
 	static Scanner sc=new Scanner(System.in);
 	public static ArrayList<Contacts> listOfContacts;
 	public static HashMap<String,List<Contacts>> hashAddressBook=new HashMap<>();
@@ -130,13 +128,20 @@ public class AddressBookService {
 	    	});
 	    	Boolean toDuplicates = name.entrySet().stream().anyMatch(names->checkduplicates.checkDuplicate(names.getKey(),names.getValue()));
 	        return toDuplicates;
+	    	
 	    }
         public static void viewCity(String city) {
-	    	dictforcity.entrySet().stream().filter(book->book.getValue().equals(city)).forEach(book->System.out.println(book));
+	    	dictforcity.entrySet().stream().filter(a->a.getValue().equals(city)).forEach(a->System.out.println(a));
+	    	long countCity=dictforcity.entrySet().stream().map(a->a.getValue().equals(city)).count();
+	    	System.out.println("City count by person"+countCity);
 	    }
         public static void viewState(String state) {
-        	dictforstate.entrySet().stream().filter(book->book.getValue().equals(state)).forEach(book->System.out.println(book));	
+        	dictforstate.entrySet().stream().filter(a->a.getValue().equals(state)).forEach(a->System.out.println(a));	
+        	long countstate=dictforstate.entrySet().stream().map(a->a.getValue().equals(state)).count();
+        	System.out.println("count state by person"+countstate);
         }
+        
+	    
 	    public static void display() {
 	    	System.out.println("Enter the name of the address book you want see");
 	    	String name=sc.next();
@@ -149,11 +154,9 @@ public class AddressBookService {
 	    }
 		public static void addContacts() {
 		}
-		public static void editContact() {
+		public static void editContact() {	
 		}
 		public static void deleteContact() {
 		}
-		public static Stream<AddressBookService> addressBookMang() {
-			return null;
-		}
+	
 }
