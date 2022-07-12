@@ -8,7 +8,7 @@ public static void main(String[] args) {
 	Scanner sc =new Scanner(System.in);
 	int option;
 	while(true) {
-		System.out.println("Operation want to perform\n 1.Add Contact\n 2.edit contact\n 3.delete\n 4.Display contact\n 5. add address book");
+		System.out.println("Operation want to perform\n 1.Add Contact\n 2.edit contact\n 3.delete\n 4.Display contact\n 5. add address book\n 6. view city\n 7. view state");
 		option =sc.nextInt();
 		switch(option) {
 		case 1:
@@ -25,16 +25,16 @@ public static void main(String[] args) {
 			break;
 		case 5:
 			AddressBookService.addAddressBook();
-		case 6:
-		    System.out.print(" please enter the name of person ");
-            String name = sc.next();
-            System.out.print(" enter to search by city: ");
-            String City = sc.next();
-            System.out.println("please enter state");
-            String state=sc.next();
-            AddressBookService.find(name, state, City);
-		default:
-			System.out.println("Enter the correct option");
+	    case 6:
+	        	System.out.println("Enter the city");
+	        	String city=sc.next();
+	        	AddressBookService.viewCity(city);
+	    case 7:
+	        	System.out.println("Enter the state");
+	        	String State=sc.next();
+	        	AddressBookService.viewState(State);
+	        	default:
+			System.out.println("Enter the option");
 		}
 		
 	System.out.println("Visit again");
